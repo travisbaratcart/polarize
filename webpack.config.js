@@ -29,7 +29,7 @@ module.exports = {
     publicPath: '/',
     filename: 'bundle.js',
   },
-  target: 'es6',
+  target: 'web',
   resolve: {
     extensions: ['.js', '.ts', '.tsx'],
     // Fix webpack's default behavior to not load packages with jsnext:main module
