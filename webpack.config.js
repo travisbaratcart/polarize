@@ -48,7 +48,6 @@ module.exports = {
             'awesome-typescript-loader'
           ]
       },
-      // css
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
@@ -61,6 +60,7 @@ module.exports = {
                 sourceMap: !isProduction,
                 importLoaders: 1,
                 localIdentName: '[local]__[hash:base64:5]'
+                //localIdentName: '[local]'
               }
             },
             {
@@ -83,6 +83,10 @@ module.exports = {
       { test: /\.html$/, use: 'html-loader' },
       { test: /\.png$/, use: 'url-loader?limit=10000' },
       { test: /\.jpg$/, use: 'file-loader' },
+      {
+        test: /\.scss$/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader']
+      },
     ],
   },
   plugins: [
