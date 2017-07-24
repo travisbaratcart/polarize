@@ -1,3 +1,4 @@
+export { Card } from './Card';
 export { ExampleComponent } from './ExampleComponent';
 export { Footer } from './Footer';
 export { Header } from './Header';

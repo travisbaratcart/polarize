@@ -65,7 +65,7 @@ input[type="checkbox"] {
   color: #e6e6e6;
 }
 
-.normal h1 {
+/*.normal h1 {
   position: absolute;
   top: -155px;
   width: 100%;
@@ -77,4 +77,4 @@ input[type="checkbox"] {
   -moz-text-rendering: optimizeLegibility;
   -ms-text-rendering: optimizeLegibility;
   text-rendering: optimizeLegibility;
-}
+}*/
