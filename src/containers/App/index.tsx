@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router';
 import { RootState } from '../../reducers';
-import { Header, MainSection } from '../../components';
+import { Header, MainSection, Card } from '../../components';
 
 export namespace App {
   export interface Props extends RouteComponentProps<void> {
@@ -25,9 +25,32 @@ export class App extends React.Component<App.Props, App.State> {
     const { todos, actions, children } = this.props;
     return (
       <div className={style.normal}>
-        <Header addTodo={actions.addTodo} />
-        <MainSection todos={todos} actions={actions} />
-        {children}
+        <Card
+          question="example question with checkboxes"
+          optionType="checkbox"
+          options={[
+            {
+              name: 'checkbox option 1',
+              value: 'option 1',
+            },
+            {
+              name: 'checkbox option 2',
+              value: 'option 2'
+            }
+          ]}/>
+        <Card
+          question="example question with radios"
+          optionType="radio"
+          options={[
+            {
+              name: 'radio option 1',
+              value: 'option 1',
+            },
+            {
+              name: 'radio option 2',
+              value: 'option 2'
+            }
+          ]}/>
       </div>
     );
   }
