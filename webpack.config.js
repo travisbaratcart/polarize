@@ -15,11 +15,13 @@ module.exports = {
   entry: {
     main: './index.tsx',
     vendor: [
+      'util',
       'react',
       'react-dom',
       'react-redux',
       'react-router',
-      'redux'
+      'redux',
+      'firebase'
     ]
   },
   output: {
@@ -112,7 +114,12 @@ module.exports = {
   node: {
     // workaround for webpack-dev-server issue
     // https://github.com/webpack/webpack-dev-server/issues/60#issuecomment-103411179
+    console: false,
     fs: 'empty',
-    net: 'empty'
+    child_process: 'empty',
+    net: 'empty',
+    tls: 'empty',
+    dgram: 'empty',
+    dns: 'empty',
   }
 };
