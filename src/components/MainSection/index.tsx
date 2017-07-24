@@ -4,6 +4,7 @@ import * as style from './style.css';
 import { connect } from 'react-redux';
 import { Footer } from '../Footer';
 import { TodoItem } from '../TodoItem';
+import { ExampleComponent } from '../ExampleComponent';
 import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../../constants/filters';
 
 const TODO_FILTERS = {
@@ -84,6 +85,7 @@ export class MainSection extends React.Component<MainSection.Props, MainSection.
     return (
       <section className={style.main}>
         {this.renderToggleAll(completedCount)}
+        <ExampleComponent />
         <ul className={style.normal}>
           {filteredTodos.map(todo =>
             <TodoItem
