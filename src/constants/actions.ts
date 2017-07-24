@@ -1,6 +1,4 @@
-export const ADD_TODO = 'ADD_TODO';
-export const EDIT_TODO = 'EDIT_TODO';
-export const DELETE_TODO = 'DELETE_TODO';
-export const COMPLETE_TODO = 'COMPLETE_TODO';
-export const COMPLETE_ALL = 'COMPLETE_ALL';
-export const CLEAR_COMPLETED = 'CLEAR_COMPLETED';
+export const RECEIVE_SURVEYS = 'RECEIVE_POLLS';
+export const CHOOSE_SURVEY = 'CHOOSE_POLL';
+export const CHOOSE_ANSWER = 'CHOOSE_ANSWER';
+export const SUBMIT_ANSWERS = 'SUBMIT_ANSWERS';
