@@ -67,6 +67,11 @@ export const reducer: Reducer<RootState> = (state: RootState, action: any) => {
         })
       });
 
+    case actions.CHOOSE_QUESTION:
+      return Object.assign({}, state, {
+        currentQuestion: action.questionId
+      });
+
     default:
       return state;
   }
