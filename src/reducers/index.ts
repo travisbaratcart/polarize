@@ -1,5 +1,5 @@
 import { combineReducers, Reducer } from 'redux';
-import { surveyReducer } from './surveys';
+// import { surveyReducer } from './surveys';
 import * as actions from '../constants/actions';
 
 interface ISurveyQuestion {

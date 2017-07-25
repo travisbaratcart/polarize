@@ -1,16 +1,13 @@
 import * as React from 'react';
-import * as TodoActions from '../../actions/todos';
 import * as style from './style.css';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router';
 import { RootState } from '../../reducers';
-import { Header, MainSection, Card } from '../../components';
 
 export namespace App {
   export interface Props extends RouteComponentProps<void> {
-    todos: TodoItemData[];
-    actions: typeof TodoActions;
+    // empty
   }
 
   export interface State {
@@ -22,35 +19,9 @@ export namespace App {
 export class App extends React.Component<App.Props, App.State> {
 
   render() {
-    const { todos, actions, children } = this.props;
     return (
       <div className={style.normal}>
-        <Card
-          question="example question with checkboxes"
-          optionType="checkbox"
-          options={[
-            {
-              name: 'checkbox option 1',
-              value: 'option 1',
-            },
-            {
-              name: 'checkbox option 2',
-              value: 'option 2'
-            }
-          ]}/>
-        <Card
-          question="example question with radios"
-          optionType="radio"
-          options={[
-            {
-              name: 'radio option 1',
-              value: 'option 1',
-            },
-            {
-              name: 'radio option 2',
-              value: 'option 2'
-            }
-          ]}/>
+        <h1>This is a test</h1>
       </div>
     );
   }
@@ -58,12 +29,10 @@ export class App extends React.Component<App.Props, App.State> {
 
 function mapStateToProps(state: RootState) {
   return {
-    todos: state.todos
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(TodoActions as any, dispatch)
   };
 }

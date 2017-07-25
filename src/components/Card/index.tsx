@@ -8,7 +8,7 @@ export namespace Card {
   }
 
   export interface State {
-    /* empty */
+    value: string;
   }
 }
 
@@ -16,7 +16,13 @@ export class Card extends React.Component<Card.Props, Card.State> {
 
   constructor(props?: Card.Props, context?: any) {
     super(props, context);
+    this.state = {value: ''};
+    this.handleOptionChange = this.handleOptionChange.bind(this);
   }
+
+  handleOptionChange(event) {
+   this.setState({value: event.target.value});
+ }
 
   render() {
     const { question, optionType, options } = this.props;
@@ -27,7 +33,8 @@ export class Card extends React.Component<Card.Props, Card.State> {
             type={optionType}
             name={question}
             id={option.name}
-            value={option.value}/>
+            value={option.value}
+            onChange={this.handleOptionChange}/>
           <label htmlFor={option.name}>{option.value}</label>
         </div>
       );
