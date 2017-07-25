@@ -1,11 +1,10 @@
 import * as React from 'react';
-import * as style from './style.css';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router';
-import { RootState } from '../../reducers';
+import { RootState, ISurvey, ConstituencyLevel } from '../../reducers';
 import { Card, Graph, Survey } from '../../components';
-import { ISurvey, ConstituencyLevel } from '../../reducers'
+
 
 export namespace App {
   export interface Props extends RouteComponentProps<void> {
