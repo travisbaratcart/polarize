@@ -1,0 +1,33 @@
+.splitbar-container {
+  width: 100%;
+
+  div {
+    display: inline-block;
+    background-color: red;
+    height: 10px;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 200;
+    line-height: 40px;
+  }
+
+  span {
+    margin-top: 10px;
+  }
+
+  .democrats {
+    background-color: #4286f4;
+  }
+
+  .republicans {
+    background-color: #e8321e;
+  }
+
+  .independents {
+    background-color: #F3AB30;
+  }
+
+  .unidentified {
+    background-color: #80146C;
+  }
+}

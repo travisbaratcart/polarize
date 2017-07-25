@@ -3,8 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router';
 import { RootState, ISurvey, ConstituencyLevel } from '../../reducers';
-import { Card, Graph, Survey } from '../../components';
-
+import { Graph, Survey, SplitBar } from '../../components';
 
 export namespace App {
   export interface Props extends RouteComponentProps<void> {
@@ -70,6 +69,12 @@ export class App extends React.Component<App.Props, App.State> {
         <div className="app-content">
           <Survey survey={exampleSurvey} />
           <Graph data={[1,2,3,4,5]}/>
+          <SplitBar data={{
+            'democrats': 50,
+            'republicans': 23,
+            'independents': 30,
+            'unidentified': 10
+          }}/>
         </div>
       </div>
     );
