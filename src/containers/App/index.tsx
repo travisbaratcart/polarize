@@ -50,6 +50,20 @@ export class App extends React.Component<App.Props, App.State> {
       <div>
         <div className="app-heading">
           <h1>Pollarize</h1>
+          <ul>
+            <li className="selected">
+              <a href="">City</a>
+            </li>
+            <li>
+              <a href="">County</a>
+            </li>
+            <li>
+              <a href="">State</a>
+            </li>
+            <li>
+              <a href="">Federal</a>
+            </li>
+          </ul>
         </div>
         <div className="app-content">
           <Survey survey={exampleSurvey} />
