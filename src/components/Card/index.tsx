@@ -2,11 +2,11 @@ import * as React from 'react';
 
 export namespace Card {
   export interface Props {
-    cardNumber: string,
+    cardNumber: number,
     question: string,
     description: string,
     optionType: string,
-    options: optionData[]
+    options: string[]
   }
 
   export interface State {
@@ -34,9 +34,9 @@ export class Card extends React.Component<Card.Props, Card.State> {
           <input
             type={optionType}
             name={question}
-            id={option.name}
-            value={option.value} />
-          <label htmlFor={option.name}>{option.value}</label>
+            id={option}
+            value={option} />
+          <label htmlFor={option}>{option}</label>
         </div>
       );
     });
