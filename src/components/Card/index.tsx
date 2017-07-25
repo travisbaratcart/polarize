@@ -2,6 +2,7 @@ import * as React from 'react';
 
 export namespace Card {
   export interface Props {
+    cardNumber: string,
     question: string,
     description: string,
     optionType: string,
@@ -9,7 +10,7 @@ export namespace Card {
   }
 
   export interface State {
-    value: string;
+    selectedVal: string;
   }
 }
 
@@ -17,34 +18,38 @@ export class Card extends React.Component<Card.Props, Card.State> {
 
   constructor(props?: Card.Props, context?: any) {
     super(props, context);
-    this.state = {value: ''};
+    this.state = {selectedVal: ''};
     this.handleOptionChange = this.handleOptionChange.bind(this);
   }
 
   handleOptionChange(event) {
-   this.setState({value: event.target.value});
- }
+   this.setState({selectedVal: event.target.value});
+  }
 
   render() {
-    const { question, description, optionType, options } = this.props;
-    var optionItems = this.props.options.map(function(option) {
+    const { cardNumber, question, description, optionType, options } = this.props;
+    var optionItems = options.map(function(option) {
       return (
-        <div>
+        <div className="options-list">
           <input
             type={optionType}
             name={question}
             id={option.name}
-            value={option.value}
-            onChange={this.handleOptionChange}/>
+            value={option.value} />
           <label htmlFor={option.name}>{option.value}</label>
         </div>
       );
     });
     return (
       <div className="card-container">
-        <h1>{question}</h1>
-        <p>{description}</p>
-        {optionItems}
+        <span className="card-no">{cardNumber}</span>
+        <div className="heading">
+          <h1>{question}</h1>
+        </div>
+        <div className="content">
+          <p>{description}</p>
+          {optionItems}
+        </div>
       </div>
     );
   }

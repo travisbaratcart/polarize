@@ -1,1 +1,29 @@
 // global styles go here
+@import url('https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i');
+
+html {
+  background-color: #ccc;
+}
+body {
+  font-family: 'Lato', sans-serif;
+  width: 414px;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: 0px 0px 10px 0px rgba(34,34,34,0.5);
+  font-weight: 300;
+}
+
+.app-heading {
+  background: linear-gradient(to bottom, rgba(73,155,234,1) 0%, $blue2 100%);
+  h1 {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0;
+    color: white;
+    padding: 16px;
+  }
+}
+
+.app-content {
+  padding: 16px;
+}
