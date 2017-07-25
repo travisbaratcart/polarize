@@ -5,6 +5,7 @@ import { Router, Route, Switch } from 'react-router';
 import { createBrowserHistory } from 'history';
 import { configureStore } from './store';
 import { App } from './containers/App';
+import { Question } from './containers/Question';
 import '../sass/app.scss'
 
 import * as firebase from 'firebase/app';
@@ -28,7 +29,8 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
       <Switch>
-        <Route path="/" component={App} />
+        <Route exact path="/" component={App} />
+        <Route path="/question/:qid" component={Question} />
       </Switch>
     </Router>
   </Provider>,
