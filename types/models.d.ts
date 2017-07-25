@@ -6,13 +6,6 @@ declare interface TodoItemData {
   completed?: boolean;
 }
 
-declare interface CardData {
-  id?: CardId;
-  question?: string;
-  optionType?: optionType; //radio, checkbox
-  options?: string[];
-}
-
 declare interface optionData {
   name: string,
   value: string,

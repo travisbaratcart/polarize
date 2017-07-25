@@ -3,7 +3,7 @@ import * as React from 'react';
 export namespace Card {
   export interface Props {
     question: string,
-    optionType: string,
+    optionType: optionType,
     options: optionData[]
   }
 
