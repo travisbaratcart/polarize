@@ -4,19 +4,37 @@ import * as actions from '../constants/actions';
 
 interface ISurveyQuestion {
   id: string;
-  text: string;
-  options: ISurveyQuestionOption[];
+  title: string;
+  description: string;
+  options: string[];
 }
 
-interface ISurveyQuestionOption {
-  id: string;
-  text: string;
-  value: any;
+interface ISurveyAuthor {
+  imageUrl: string;
+  displayName: string;
+  title: string;
+  politicalParty: string;
+  constituency: IConstituency;
 }
 
-interface ISurvey {
+export enum ConstituencyLevel {
+  City,
+  County,
+  State,
+  Federal
+}
+
+interface IConstituency {
+  level: ConstituencyLevel,
+  location: string;
+  coordinates: string;
+  population: number;
+}
+
+export interface ISurvey {
   id: string;
   questions: ISurveyQuestion[];
+  author: ISurveyAuthor;
 }
 
 interface IAnswer {

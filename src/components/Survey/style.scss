@@ -1,0 +1,61 @@
+.survey-content {
+  .author-info {
+    background-color: #d8d8d8;
+    padding: 10px;
+  }
+
+  .constituency-level {
+    img {
+      height: 15px;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+
+    span {
+      vertical-align: middle;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+  }
+
+  .constituency-population {
+    display: inline-block;
+
+    font-size: 45px;
+    margin-right: 10px;
+  }
+
+  .constituency-location {
+    display: inline-block;
+    font-size: 14px;
+
+    span {
+      display: block;
+    }
+  }
+
+  .author-details {
+    margin: 14px 0;
+
+    img {
+      height: 50px;
+      display: inline-block;
+      vertical-align: middle;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+  }
+
+  .author-details-text {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .author-affiliation {
+    display: block;
+  }
+
+  .survey-questions {
+    padding: 20px;
+  }
+}
