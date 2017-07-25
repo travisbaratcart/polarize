@@ -6,6 +6,15 @@ declare interface TodoItemData {
   completed?: boolean;
 }
 
+declare interface optionData {
+  name: string,
+  value: string
+}
+
+declare type optionType = 'radio' | 'checkbox';
+
+declare type CardId = number;
+
 declare type TodoItemId = number;
 
 declare type TodoFilterType = 'SHOW_ALL' | 'SHOW_ACTIVE' | 'SHOW_COMPLETED';

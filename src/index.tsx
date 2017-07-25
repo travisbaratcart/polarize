@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { Router, Route, Switch } from 'react-router';
 import { createBrowserHistory } from 'history';
 import { configureStore } from './store';
+import { App } from './containers/App';
 import '../sass/app.scss'
 
 import * as firebase from 'firebase/app';
@@ -27,6 +28,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
       <Switch>
+        <Route path="/" component={App} />
       </Switch>
     </Router>
   </Provider>,
