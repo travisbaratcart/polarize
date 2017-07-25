@@ -42,6 +42,15 @@ interface IAnswer {
   optionId: string;
 }
 
+export interface IChoiceResults {
+  results: IChoiceData[];
+}
+
+interface IChoiceData {
+  choiceName: string;
+  choiceCount: number;
+}
+
 export interface RootState {
   surveys: ISurvey[];
   currentSurvey: string;

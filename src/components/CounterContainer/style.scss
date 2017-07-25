@@ -1,0 +1,9 @@
+.counter-container {
+  margin: 20px;
+}
+
+.counter-container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
