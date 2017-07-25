@@ -40,6 +40,14 @@
       font-size: 14px;
       margin: 0;
     }
+    a {
+      color: $blue2;
+      text-decoration: none;
+      text-align: center;
+      font-size: 12px;
+      margin: 0 auto;
+      display: block;
+    }
   }
 
   .options-list {

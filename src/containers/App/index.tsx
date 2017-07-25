@@ -2,6 +2,8 @@ import * as React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router';
+import { RootState, ISurvey, ConstituencyLevel } from '../../reducers';
+import { Survey, QuestionDetail } from '../../components';
 import { RootState, ISurvey, ConstituencyLevel, IChoiceResults } from '../../reducers';
 import { Graph, Survey, SplitBar, Counter, CounterContainer } from '../../components';
 
@@ -83,14 +85,7 @@ export class App extends React.Component<App.Props, App.State> {
         </div>
         <div className="app-content">
           <Survey survey={exampleSurvey} />
-          <Graph data={[1,2,3,4,5]}/>
-          <SplitBar data={{
-            'democrats': 50,
-            'republicans': 23,
-            'independents': 30,
-            'unidentified': 10
-          }}/>
-		  <CounterContainer data={exampleChoiceResults} />
+		      <CounterContainer data={exampleChoiceResults} />
         </div>
       </div>
     );
