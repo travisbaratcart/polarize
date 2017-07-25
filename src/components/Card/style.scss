@@ -4,6 +4,10 @@
   box-shadow: 0px 0px 10px 0px rgba(34,34,34,0.5);
   position: relative;
 
+  &:not(:last-child) {
+    margin-bottom: 40px;
+  }
+
   .card-no {
     position: absolute;
     top: -15px;
