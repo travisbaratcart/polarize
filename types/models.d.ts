@@ -8,7 +8,7 @@ declare interface TodoItemData {
 
 declare interface optionData {
   name: string,
-  value: string,
+  value: string
 }
 
 declare type optionType = 'radio' | 'checkbox';

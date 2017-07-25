@@ -3,7 +3,8 @@ import * as React from 'react';
 export namespace Card {
   export interface Props {
     question: string,
-    optionType: optionType,
+    description: string,
+    optionType: string,
     options: optionData[]
   }
 
@@ -25,7 +26,7 @@ export class Card extends React.Component<Card.Props, Card.State> {
  }
 
   render() {
-    const { question, optionType, options } = this.props;
+    const { question, description, optionType, options } = this.props;
     var optionItems = this.props.options.map(function(option) {
       return (
         <div>
@@ -42,6 +43,7 @@ export class Card extends React.Component<Card.Props, Card.State> {
     return (
       <div className="card-container">
         <h1>{question}</h1>
+        <p>{description}</p>
         {optionItems}
       </div>
     );

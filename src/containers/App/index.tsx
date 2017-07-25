@@ -20,7 +20,7 @@ export class App extends React.Component<App.Props, App.State> {
 
   render() {
     return (
-      <div className={style.normal}>
+      <div>
         <h1>This is a test</h1>
       </div>
     );
