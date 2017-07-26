@@ -1,21 +1,44 @@
 .take-action-container {
+  padding-bottom: 40px;
+  clear: both;
+  overflow: hidden;
+
    .take-action-content {
-		text-align: center; 
+		text-align: center;
 
 		.take-action-message {
 		  font-weight: bold;
+      padding-top: 9px;
 		}
-		
+
 		.actions-container {
 		  padding: 10px;
 		}
-		
+
 		.take-action-icon {
-		  margin: 10px;
+      float: left;
+      padding-right: 10px;
 		  img {
 		    width: 29px;
 		    height: 29px;
 		 }
 		}
    }
+}
+
+.take-action-action {
+  text-align: left;
+  margin: 20px auto 15px;
+  width: 238px;
+
+  &:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+clear: both;
+  }
+  .detail-title {
+    line-height: 27px;
+  }
 }

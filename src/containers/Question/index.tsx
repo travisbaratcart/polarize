@@ -55,12 +55,12 @@ export class Question extends React.Component<Question.Props, Question.State> {
 		choiceResults.results.push({ choiceName: questionOption, choiceCount: optionCount });
 	});
     return (
-      <div>
+      <div className="question-container">
         <div className="app-heading">
           <h1>Pollarize</h1>
         </div>
         <div className="app-content">
-		  <div className="survey-question">{surveyQuestion.title}</div>
+		      <div className="survey-question">{surveyQuestion.title}</div>
           <QuestionDetail
             graphData={graphData}
             splitBarData={{
@@ -70,9 +70,16 @@ export class Question extends React.Component<Question.Props, Question.State> {
               'unidentified': other
             }} />
         </div>
-		<CounterContainer data={choiceResults} />
-		<Share />
-		<TakeAction />
+        <div className="counter-wrapper">
+          <h4>Total number of votes</h4>
+    		  <CounterContainer data={choiceResults} />
+        </div>
+        <hr />
+    		<Share />
+    		<TakeAction />
+        <div className="app-footer">
+          <p>&copy; Pollarize 2017</p>
+        </div>
       </div>
     );
   }
