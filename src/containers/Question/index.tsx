@@ -5,11 +5,12 @@ import { connect } from 'react-redux';
 import { RootState, ISurvey, ConstituencyLevel, IChoiceResults, ISurveyQuestion } from '../../reducers';
 import { Survey, QuestionDetail, CounterContainer, Share, TakeAction } from '../../components';
 import { getRandomNumberOfUsers } from '../../utils/random';
-import { SURVEYDATA } from '../../constants/surveys';
+import { SURVEYS, getSurveyFromId } from '../../constants/surveys';
 
 export namespace Question {
   export interface Props extends RouteComponentProps<void> {
 	  match? : any;
+    surveyId: string;
   }
 
   export interface State {
@@ -34,17 +35,17 @@ export class Question extends React.Component<Question.Props, Question.State> {
 
   render() {
 	  const questionId = this.props.match.params.qid;
-	  const exampleSurvey: ISurvey = SURVEYDATA;
+	  const currentSurvey: ISurvey = getSurveyFromId(this.props.surveyId);
 
 	  var surveyQuestion : ISurveyQuestion = null;
 
-		for (var i = 0; i < exampleSurvey.questions.length; i++) {
-			if (exampleSurvey.questions[i].id === questionId) {
-				surveyQuestion = exampleSurvey.questions[i];
+		for (var i = 0; i < currentSurvey.questions.length; i++) {
+			if (currentSurvey.questions[i].id === questionId) {
+				surveyQuestion = currentSurvey.questions[i];
 			}
 		}
-	
-	var choiceResults: IChoiceResults = 
+
+	var choiceResults: IChoiceResults =
 	{
 		results : []
 	};
@@ -52,7 +53,7 @@ export class Question extends React.Component<Question.Props, Question.State> {
 	surveyQuestion.options.map((questionOption) => {
 		var optionCount = getRandomNumberOfUsers(1000);
 		choiceResults.results.push({ choiceName: questionOption, choiceCount: optionCount });
-	});	
+	});
     return (
       <div>
         <div className="app-heading">
@@ -79,6 +80,7 @@ export class Question extends React.Component<Question.Props, Question.State> {
 
 function mapStateToProps(state: RootState) {
   return {
+    surveyId: state.surveyId
   };
 }
 

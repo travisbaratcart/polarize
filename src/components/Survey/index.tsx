@@ -25,7 +25,7 @@ export class Survey extends React.Component<ISurveyProps, {}> {
           key={cardNumber}
           cardNumber={cardNumber + 1}
           question={question}
-          optionType="radio"
+          optionType={question.optionType || 'radio'}
           answer={answerToQuestion}
           onChangeAnswer={this.props.onChangeAnswer} />
       );
@@ -34,6 +34,7 @@ export class Survey extends React.Component<ISurveyProps, {}> {
     const surveyAnswers = survey.questions.map((question, questionNumber) => {
       return (
         <SurveyAnswer
+          questionNumber={questionNumber + 1}
           questionTitle={question.title}
           questionDescription={question.description}
           questionOptions={question.options}/>
@@ -71,9 +72,11 @@ export class Survey extends React.Component<ISurveyProps, {}> {
             : (
                 <section className="survey-questions">
                   {surveyQuestions}
-                  <button onClick={this.props.onSubmit}>
+                  <div className="submit-button">
+                    <button onClick={this.props.onSubmit}>
                     Submit
-                  </button>
+                    </button>
+                  </div>
                 </section>
               )
         }

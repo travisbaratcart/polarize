@@ -21,6 +21,13 @@ body {
     margin: 0;
     color: white;
     padding: 16px 0 16px 16px;
+    a {
+      color: white;
+      text-decoration: none;
+      &:hover {
+        text-decoration:none;
+      }
+    }
   }
 
   ul {
@@ -47,5 +54,17 @@ body {
     &.selected {
       border-bottom: 4px solid #1ff8ea;
     }
+  }
+}
+
+.app-footer {
+  p {
+    width: 120px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px 10px 30px 15px;
+    font-size: 12px;
+    background: url('../images/logo.png') 0 5px no-repeat transparent;
+    background-size: 25px 25px;
   }
 }

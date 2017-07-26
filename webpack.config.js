@@ -16,12 +16,13 @@ module.exports = {
     main: './index.tsx',
     vendor: [
       'util',
+      'history',
+      'jquery',
       'react',
       'react-dom',
       'react-redux',
       'react-router',
-      'redux',
-      'firebase'
+      'redux'
     ]
   },
   output: {
