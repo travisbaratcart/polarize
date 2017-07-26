@@ -4,6 +4,7 @@ import { CounterContainer } from '../CounterContainer';
 import { getRandomNumberOfUsers } from '../../utils/random';
 
 interface ISurveyAnswerProps {
+  questionNumber: number;
   questionTitle: string;
   questionDescription: string;
   questionOptions: string[];
@@ -32,9 +33,16 @@ export class SurveyAnswer extends React.Component<ISurveyAnswerProps, {}> {
 
     return (
       <section className="surveyanswer-container">
-        <h1>{this.props.questionTitle}</h1>
-        <h2>{this.props.questionDescription}</h2>
-        <CounterContainer data={choiceResults} />
+        <div className="card-container">
+          <span className="card-no">{this.props.questionNumber}</span>
+          <div className="heading">
+            <h1>{this.props.questionTitle}</h1>
+          </div>
+          <div className="content">
+            <p>{this.props.questionDescription}</p>
+            <CounterContainer data={choiceResults} />
+          </div>
+        </div>
       </section>
     );
   }

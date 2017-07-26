@@ -34,6 +34,7 @@ export class Survey extends React.Component<ISurveyProps, {}> {
     const surveyAnswers = survey.questions.map((question, questionNumber) => {
       return (
         <SurveyAnswer
+          questionNumber={questionNumber + 1}
           questionTitle={question.title}
           questionDescription={question.description}
           questionOptions={question.options}/>

@@ -75,6 +75,7 @@ function mapStateToProps(state: RootState) {
 function mapDispatchToProps(dispatch) {
   return {
     onSubmit: () => {
+      window.scrollTo(0, 200);
       dispatch({
         type: Actions.SUBMIT_ANSWERS
       });
