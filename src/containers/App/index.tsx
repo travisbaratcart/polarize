@@ -58,6 +58,9 @@ export class App extends React.Component<App.Props, App.State> {
             answers={this.props.answers}
             onChangeAnswer={this.props.onChangeAnswer} />
         </div>
+        <div className="app-footer">
+          <p>&copy; Pollarize 2017</p>
+        </div>
       </div>
     );
   }
