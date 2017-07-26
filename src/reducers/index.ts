@@ -58,8 +58,6 @@ export interface RootState {
 }
 
 export const reducer: Reducer<RootState> = (state: RootState, action: any) => {
-  console.log('state: ', state);
-
   if (!state) {
     state = {
       submitted: false,
