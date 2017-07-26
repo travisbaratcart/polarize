@@ -101,7 +101,6 @@ export const reducer: Reducer<RootState> = (state: RootState = <RootState>{}, ac
       });
 
     case actions.SUBMIT_ANSWERS:
-      console.log('submitting answers');
       return Object.assign({}, state, {
         submitted: true
       });
