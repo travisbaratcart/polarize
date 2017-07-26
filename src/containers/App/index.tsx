@@ -3,7 +3,7 @@ import * as Actions from '../../constants/actions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router';
-import { RootState, IAnswer, ISurvey, ConstituencyLevel } from '../../reducers';
+import { RootState, IAnswer, ISurvey, ISurveyQuestion, ConstituencyLevel } from '../../reducers';
 import { Graph, Survey, SplitBar, QuestionDetail } from '../../components';
 import { SURVEYDATA } from '../../constants/surveys';
 

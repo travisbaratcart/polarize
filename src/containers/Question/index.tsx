@@ -1,14 +1,15 @@
 import * as React from 'react';
+import { Router, Route, Switch, RouteComponentProps } from 'react-router';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { RouteComponentProps } from 'react-router';
-import { RootState, ISurvey, ConstituencyLevel, IChoiceResults } from '../../reducers';
+import { RootState, ISurvey, ConstituencyLevel, IChoiceResults, ISurveyQuestion } from '../../reducers';
 import { Survey, QuestionDetail, CounterContainer, Share, TakeAction } from '../../components';
 import { getRandomNumberOfUsers } from '../../utils/random';
+import { SURVEYDATA } from '../../constants/surveys';
 
 export namespace Question {
   export interface Props extends RouteComponentProps<void> {
-    // empty
+	  params : string[];
   }
 
   export interface State {
@@ -16,30 +17,27 @@ export namespace Question {
   }
 }
 
-var choiceA = getRandomNumberOfUsers(1000);
-var choiceB = getRandomNumberOfUsers(1000);
-var choiceC = getRandomNumberOfUsers(1000);
-var choiceD = getRandomNumberOfUsers(1000);
-	
-const exampleChoiceResults: IChoiceResults = {
-	
-	results: [{
-	  choiceName: 'choice A',
-	  choiceCount: choiceA
-	},
-	{
-	  choiceName: 'choice B',
-	  choiceCount: choiceB
-	},
-	{
-	  choiceName: 'choice C',
-	  choiceCount: choiceC
-	},
-	{
-	  choiceName: 'choice D',
-	  choiceCount: choiceD
-	}]
+const exampleSurvey: ISurvey = SURVEYDATA;
+const questionId = 'Q_4';
+//console.log(this.props);
+
+var surveyQuestion : ISurveyQuestion = null;
+
+for (var i = 0; i < exampleSurvey.questions.length; i++) {
+	if (exampleSurvey.questions[i].id === questionId) {
+		surveyQuestion = exampleSurvey.questions[i];
+	}
 }
+	
+var choiceResults: IChoiceResults = 
+{
+	results : []
+};
+
+surveyQuestion.options.map((questionOption) => {
+	var optionCount = getRandomNumberOfUsers(1000);
+	choiceResults.results.push({ choiceName: questionOption, choiceCount: optionCount });
+});
 
 var group1 = getRandomNumberOfUsers(1000);
 var group2 = getRandomNumberOfUsers(1000);
@@ -72,7 +70,8 @@ export class Question extends React.Component<Question.Props, Question.State> {
               'unidentified': other
             }} />
         </div>
-		<CounterContainer data={exampleChoiceResults} />
+		<div>{surveyQuestion.title}</div>
+		<CounterContainer data={choiceResults} />
 		<Share />
 		<TakeAction />
       </div>
