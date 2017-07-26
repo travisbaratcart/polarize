@@ -48,7 +48,7 @@ export class Card extends React.Component<Card.Props, {}> {
         <div className="content">
           <p>{question.description}</p>
           {optionItems}
-          <a href="">Details View</a>
+          <a className="activity-link" href="">Activity/Details View</a>
         </div>
       </div>
     );
