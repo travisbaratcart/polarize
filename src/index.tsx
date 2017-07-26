@@ -30,7 +30,7 @@ ReactDOM.render(
     <Router history={history}>
       <Switch>
         <Route exact path="/" component={App} />
-        <Route path="/question/:qid" component={Question} />
+        <Route path="/question" component={Question} />
       </Switch>
     </Router>
   </Provider>,

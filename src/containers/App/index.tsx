@@ -3,8 +3,8 @@ import * as Actions from '../../constants/actions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router';
-import { RootState, IAnswer, ISurvey, ConstituencyLevel, IChoiceResults } from '../../reducers';
-import { Graph, Survey, SplitBar, Counter, CounterContainer } from '../../components';
+import { RootState, IAnswer, ISurvey, ConstituencyLevel } from '../../reducers';
+import { Graph, Survey, SplitBar, QuestionDetail } from '../../components';
 import { SURVEYDATA } from '../../constants/surveys';
 
 export namespace App {
@@ -52,13 +52,6 @@ export class App extends React.Component<App.Props, App.State> {
             onSubmit={this.props.onSubmit}
             answers={this.props.answers}
             onChangeAnswer={this.props.onChangeAnswer} />
-          <Graph data={[1,2,3,4,5]}/>
-          <SplitBar data={{
-            'democrats': 50,
-            'republicans': 23,
-            'independents': 30,
-            'unidentified': 10
-          }}/>
         </div>
       </div>
     );

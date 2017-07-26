@@ -7,3 +7,5 @@ export { SplitBar } from './SplitBar';
 export { QuestionDetail } from './QuestionDetail';
 export { Counter } from './Counter';
 export { CounterContainer } from './CounterContainer';
+export { Share } from './Share';
+export { TakeAction } from './TakeAction';

@@ -1,0 +1,21 @@
+.take-action-container {
+   .take-action-content {
+		text-align: center; 
+
+		.take-action-message {
+		  font-weight: bold;
+		}
+		
+		.actions-container {
+		  padding: 10px;
+		}
+		
+		.take-action-icon {
+		  margin: 10px;
+		  img {
+		    width: 29px;
+		    height: 29px;
+		 }
+		}
+   }
+}
