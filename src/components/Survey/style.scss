@@ -1,11 +1,15 @@
 .survey-content {
   button {
-    float: right;
+    text-align: center;
     background-color: #499bea;
     color: white;
     border: none;
     padding: 10px 30px;
     border-radius: 5px;
+    width: 300px;
+    margin: 0 auto;
+    font-size: 14px;
+    display: block;
   }
 
   .author-info {
