@@ -52,13 +52,6 @@ export class App extends React.Component<App.Props, App.State> {
             onSubmit={this.props.onSubmit}
             answers={this.props.answers}
             onChangeAnswer={this.props.onChangeAnswer} />
-          <Graph data={[1,2,3,4,5]}/>
-          <SplitBar data={{
-            'democrats': 50,
-            'republicans': 23,
-            'independents': 30,
-            'unidentified': 10
-          }}/>
         </div>
       </div>
     );
