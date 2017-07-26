@@ -17,6 +17,7 @@ module.exports = {
     vendor: [
       'util',
       'history',
+      'jquery',
       'react',
       'react-dom',
       'react-redux',

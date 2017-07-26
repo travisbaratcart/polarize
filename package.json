@@ -45,11 +45,13 @@
     "webpack-dev-server": "^2.5.1"
   },
   "dependencies": {
+    "@types/jquery": "^3.2.9",
     "classnames": "^2.2.5",
     "d3": "^3.5.6",
     "firebase": "^4.1.4",
     "fs": "0.0.1-security",
     "history": "^4.6.3",
+    "jquery": "^3.2.1",
     "node-sass": "^3.7.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
