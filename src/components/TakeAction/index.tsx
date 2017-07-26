@@ -20,15 +20,15 @@ export class TakeAction extends React.Component<TakeAction.Props, TakeAction.Sta
     return (
       <div className="take-action-container">
 	    <div className="take-action-content">
-		<div className="take-action-message">Get Involved</div>
+		<div className="take-action-message detail-title-heading">Get Involved</div>
 		  <div className="actions-container">
 		     <div className="take-action-action">
 		    <div className="take-action-icon"><img src="../../assets/document.svg"/></div>
-		    <div>Start A Petition</div>
+		    <div className="detail-title">Start A Petition</div>
 		  </div>
 		  <div className="take-action-action">
 		    <div className="take-action-icon"><img src="../../assets/phone.svg"/></div>
-		    <div>Contact Your Representative</div>
+		    <div className="detail-title">Contact Your Representative</div>
 		  </div>
 		  </div>
 		</div>

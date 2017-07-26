@@ -1,8 +1,36 @@
 .survey-question {
 	text-align: center;
 	padding: 10px;
-	font-weight: bold;
-	font-size: large;
+	font-weight: 500;
+	font-size: 20px;
+}
+
+.question-container {
+	hr {
+		margin: 0 20px;
+		stroke: #eee;
+	}
+	.app-content {
+		padding: 16px;
+	}
+	h4 {
+		font-size: 16px;
+		font-weight: 200;
+		text-align: center;
+	}
+}
+
+.counter-wrapper {
+	padding: 0px 40px;
+	.choiceName {
+		font-weight: 200;
+	}
+}
+
+#root .detail-title-heading {
+	font-weight: 500;
+	font-size: 20px;
+
 }
 
 .back-btn {

@@ -20,7 +20,7 @@ export class Share extends React.Component<Share.Props, Share.State> {
     return (
       <div className="share-container">
 	    <div className="share-content">
-		<div className="share-message">Spread Awareness</div>
+		<div className="share-message detail-title-heading">Spread Awareness</div>
 		  <div className="share-btn"><img src="../../assets/FB-f-Logo__blue_29.png"/></div>
 		  <div className="share-btn"><img src="../../assets/Twitter_Logo_White_On_Blue.svg"/></div>
 		  <div className="share-btn"><img src="../../assets/In-2C-28px-TM.png"/></div>
