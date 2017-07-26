@@ -1,9 +1,12 @@
 import * as React from 'react'
 import { ISurvey, ConstituencyLevel } from '../../reducers/index';
 import { Card } from '../Card';
+import { SurveyAnswer } from '../SurveyAnswer';
 
 interface ISurveyProps {
-  survey: ISurvey
+  survey: ISurvey;
+  submitted: boolean;
+  onSubmit: () => any;
 };
 
 export class Survey extends React.Component<ISurveyProps, {}> {
@@ -20,6 +23,15 @@ export class Survey extends React.Component<ISurveyProps, {}> {
           optionType="radio"
           options={question.options}/>
       );
+    });
+
+    const surveyAnswers = survey.questions.map((question, questionNumber) => {
+      return (
+        <SurveyAnswer
+          questionTitle={question.title}
+          questionDescription={question.description}
+          questionOptions={question.options}/>
+      )
     });
 
     return (
@@ -44,9 +56,21 @@ export class Survey extends React.Component<ISurveyProps, {}> {
             </div>
           </section>
         </section>
-        <section className="survey-questions">
-          {surveyQuestions}
-        </section>
+        {
+          this.props.submitted
+            ? (
+                <section className="survey-answers">
+                  {surveyAnswers}
+                </section>              )
+            : (
+                <section className="survey-questions">
+                  {surveyQuestions}
+                  <button onClick={this.props.onSubmit}>
+                    Submit
+                  </button>
+                </section>
+              )
+        }
       </section>
     );
   }
