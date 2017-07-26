@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as Actions from '../../constants/actions';
+import * as $ from 'jquery';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router';
@@ -79,7 +80,7 @@ function mapDispatchToProps(dispatch) {
       });
     },
     onSubmit: () => {
-      window.scrollTo(0, 280);
+      $("body").animate({ scrollTop: 0 }, 500);
       dispatch({
         type: Actions.SUBMIT_ANSWERS
       });
