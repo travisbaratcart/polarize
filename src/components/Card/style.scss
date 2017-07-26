@@ -58,8 +58,16 @@
 
   .options-list {
     margin: 10px 0;
+    padding-bottom: 5px;
+    input {
+      float: left;
+      width: 15px;
+      height: 15px;
+    }
     label {
       margin-left: 5px;
+      display: block;
+      padding-left: 20px;
     }
   }
 }
