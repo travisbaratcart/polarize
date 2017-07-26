@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)http://localhost:3000/question/Q_1 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width">
+    
+    <title>Pollarize</title>
+  <style type="text/css">@import url(https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i);</style><style type="text/css">html {
+  background-color: #ccc; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  width: 414px;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: 0px 0px 10px 0px rgba(34, 34, 34, 0.5);
+  font-weight: 300; }
+
+.app-heading {
+  background: linear-gradient(to right, #1e5799 0%, #0e72f4 0%, #ffffff 54%, #ff2828 100%); }
+  .app-heading h1 {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0;
+    color: white;
+    padding: 16px 0 16px 16px; }
+    .app-heading h1 a {
+      color: white;
+      text-decoration: none; }
+      .app-heading h1 a:hover {
+        text-decoration: none; }
+  .app-heading ul {
+    list-style-type: none;
+    padding: 3px 16px 0;
+    margin: 0px 0 0 0;
+    background-color: #01057f; }
+  .app-heading li {
+    display: inline-block;
+    color: white;
+    padding: 5px 10px;
+    margin-right: 30px;
+    font-size: 14px; }
+    .app-heading li a,
+    .app-heading li a:hover,
+    .app-heading li a:active {
+      color: white;
+      text-decoration: none; }
+    .app-heading li.selected {
+      border-bottom: 4px solid #1ff8ea; }
+
+.app-footer p {
+  width: 120px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 10px 10px 30px 15px;
+  font-size: 12px;
+  background: url(/1c68fdf637ce9c3613f8462aa5c52516.png) 0 5px no-repeat transparent;
+  background-size: 25px 25px; }
+
+.card-container {
+  margin: 10px;
+  border: 1px solid #eee;
+  box-shadow: 0px 0px 10px 0px rgba(34, 34, 34, 0.5);
+  position: relative; }
+  .card-container:not(:last-child) {
+    margin-bottom: 40px; }
+  .card-container .card-no {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    background-color: #e20029;
+    border-radius: 20px;
+    text-align: center;
+    padding: 5px;
+    height: 20px;
+    width: 20px;
+    color: white;
+    font-weight: 500;
+    border: 2px solid white;
+    box-shadow: 0px 0px 5px 0px rgba(34, 34, 34, 0.5); }
+  .card-container .heading {
+    background-color: #eee; }
+    .card-container .heading h1 {
+      font-size: 15px;
+      padding: 16px;
+      margin: 0; }
+  .card-container .content {
+    padding: 16px; }
+    .card-container .content p {
+      font-size: 14px;
+      margin: 0; }
+  .card-container .activity-link {
+    background: url(/2c6bcc5261818d83a1127c34c899f00c.png) no-repeat transparent;
+    background-size: 18px 16px;
+    padding-left: 9px;
+    color: #499bea;
+    text-decoration: none;
+    text-align: center;
+    font-size: 12px;
+    width: 135px;
+    margin: 0 auto;
+    display: block;
+    line-height: 18px; }
+  .card-container .options-list {
+    margin: 10px 0;
+    padding-bottom: 5px; }
+    .card-container .options-list input {
+      float: left;
+      width: 15px;
+      height: 15px; }
+    .card-container .options-list label {
+      margin-left: 5px;
+      display: block;
+      padding-left: 20px; }
+
+.examplecomponent-container {
+  font-weight: 600; }
+
+.survey-content {
+  position: relative; }
+  .survey-content .submit-button {
+    position: fixed;
+    bottom: 0;
+    width: 414px;
+    background-color: white;
+    padding: 13px 0;
+    border-top: 1px solid #eee;
+    margin-left: -20px;
+    box-shadow: 0px 0px 5px 0px rgba(34, 34, 34, 0.1); }
+  .survey-content button {
+    text-align: center;
+    background-color: #499bea;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+    width: 300px;
+    margin: 0 auto;
+    font-size: 14px;
+    display: block; }
+    .survey-content button:hover {
+      cursor: pointer; }
+  .survey-content .author-info {
+    background-color: #d8d8d8;
+    padding: 16px; }
+  .survey-content .constituency-level img {
+    height: 15px;
+    vertical-align: middle;
+    margin-right: 5px; }
+  .survey-content .constituency-level span {
+    vertical-align: middle;
+    text-transform: uppercase;
+    font-size: 14px; }
+  .survey-content .constituency-population {
+    display: inline-block;
+    font-size: 45px;
+    margin-right: 10px; }
+  .survey-content .constituency-location {
+    display: inline-block;
+    font-size: 14px; }
+    .survey-content .constituency-location span {
+      display: block; }
+  .survey-content .author-details {
+    margin: 14px 0; }
+    .survey-content .author-details img {
+      height: 50px;
+      display: inline-block;
+      vertical-align: middle;
+      border-radius: 50%;
+      margin-right: 8px; }
+  .survey-content .author-details-text {
+    display: inline-block;
+    vertical-align: middle; }
+  .survey-content .author-affiliation {
+    display: block; }
+  .survey-content .survey-questions {
+    padding: 20px; }
+
+.surveyanswer-container {
+  margin: 40px 20px 40px 20px; }
+  .surveyanswer-container h1 {
+    padding: 0 25px;
+    font-weight: 400;
+    margin: 0; }
+  .surveyanswer-container h2 {
+    font-weight: 200;
+    color: #999;
+    font-size: 13px;
+    padding: 0 25px; }
+
+.graph-container {
+  text-align: center;
+  margin: 0 auto; }
+
+.splitbar-container {
+  padding: 15px;
+  background-color: #eee;
+  margin: 10px 0; }
+  .splitbar-container p {
+    text-align: center;
+    margin: 5px 0 20px; }
+  .splitbar-container .splitbar-content {
+    width: 100%; }
+    .splitbar-container .splitbar-content div {
+      display: inline-block;
+      background-color: red;
+      height: 10px;
+      text-align: center;
+      font-size: 10px;
+      font-weight: 200;
+      line-height: 40px; }
+    .splitbar-container .splitbar-content span {
+      margin-top: 10px; }
+    .splitbar-container .splitbar-content .democrats {
+      background-color: #4286f4; }
+    .splitbar-container .splitbar-content .republicans {
+      background-color: #e8321e; }
+    .splitbar-container .splitbar-content .independents {
+      background-color: #F3AB30; }
+    .splitbar-container .splitbar-content .unidentified {
+      background-color: #80146C; }
+
+.questiondetail-container {
+  font-weight: 600; }
+
+.counter-element {
+  position: relative;
+  width: 160px;
+  text-align: center;
+  float: left;
+  margin: 1 0 0 0;
+  height: 110px; }
+  .counter-element .content .choiceName {
+    margin: 3px;
+    font-weight: 400;
+    display: -webkit-box;
+    max-width: 400px;
+    margin: 0 auto;
+    font-size: 15px;
+    line-height: 1.4;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+  .counter-element .content .choiceCount {
+    font-size: 30px;
+    font-weight: 500; }
+
+.counter-container {
+  margin: 0px; }
+
+.counter-container:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.share-container .share-content {
+  text-align: center;
+  padding: 20px; }
+  .share-container .share-content img {
+    width: 29px;
+    height: 29px; }
+  .share-container .share-content .share-btn {
+    text-align: center;
+    display: inline-block;
+    margin: 10px; }
+  .share-container .share-content .share-message {
+    font-weight: bold; }
+
+.take-action-container .take-action-content {
+  text-align: center; }
+  .take-action-container .take-action-content .take-action-message {
+    font-weight: bold; }
+  .take-action-container .take-action-content .actions-container {
+    padding: 10px; }
+  .take-action-container .take-action-content .take-action-icon {
+    margin: 10px; }
+    .take-action-container .take-action-content .take-action-icon img {
+      width: 29px;
+      height: 29px; }
+
+.survey-question {
+  text-align: center;
+  padding: 10px;
+  font-weight: 300;
+  font-size: 18px; }
+
+.question-container .app-content {
+  padding: 16px; }
+</style><script type="text/javascript" charset="utf-8" src="./Pollarize_files/0.184f43a56f09d756e9b2.hot-update.js"></script><script type="text/javascript" charset="utf-8" src="./Pollarize_files/0.75ccaa3d142428afd2ac.hot-update.js"></script><script type="text/javascript" charset="utf-8" src="./Pollarize_files/0.ab60e31c61da192c01ba.hot-update.js"></script><script type="text/javascript" charset="utf-8" src="./Pollarize_files/0.9b957f1a81fc222a4e59.hot-update.js"></script><script type="text/javascript" charset="utf-8" src="./Pollarize_files/0.f17bdbb584aec53387d9.hot-update.js"></script><script type="text/javascript" charset="utf-8" src="./Pollarize_files/0.167f17e5c6a332b1318e.hot-update.js"></script><script type="text/javascript" charset="utf-8" src="./Pollarize_files/0.95d543a42b9973c3a542.hot-update.js"></script><script type="text/javascript" charset="utf-8" src="./Pollarize_files/0.05d5e1f3314aeaa45da8.hot-update.js"></script><script type="text/javascript" charset="utf-8" src="./Pollarize_files/0.125d42c578c3731900f1.hot-update.js"></script><script type="text/javascript" charset="utf-8" src="./Pollarize_files/0.717d22589ef14a6d1ac1.hot-update.js"></script><script type="text/javascript" charset="utf-8" src="./Pollarize_files/0.5f96123718457bd32472.hot-update.js"></script><script type="text/javascript" charset="utf-8" src="./Pollarize_files/0.6445b6766011fbd1b630.hot-update.js"></script><script type="text/javascript" charset="utf-8" src="./Pollarize_files/0.b1df371e5fa3f519486d.hot-update.js"></script><script type="text/javascript" charset="utf-8" src="./Pollarize_files/0.d78f15da2a19a1da3d07.hot-update.js"></script><script type="text/javascript" charset="utf-8" src="./Pollarize_files/0.57a9a57e642035839967.hot-update.js"></script><script type="text/javascript" charset="utf-8" src="./Pollarize_files/0.1f5244d1d4695f08a940.hot-update.js"></script><script type="text/javascript" charset="utf-8" src="./Pollarize_files/0.af3ae4d97d51a7a8274f.hot-update.js"></script></head>
+  <body>
+    <div id="root"><div data-reactroot="" class="question-container"><div class="app-heading"><h1>Pollarize</h1></div><div class="app-content"><div class="survey-question">Are local parks important to your quality of life?</div><div class="questiondetail-container"><div class="graph-container"><div class="rd3-basic-chart"><h4 class="rd3-chart-title">Number of responders vs. Age</h4><svg class="rd3-chart" height="300" width="400"><g transform="translate(45,10)" class="rd3-barchart"><g class="rd3-barchart-yaxis" transform="translate(0, 0)"><g><g class="tick" transform="translate(0,250)"><line x2="-6" style="shape-rendering: crispEdges; opacity: 1; stroke: rgb(0, 0, 0);"></line><text stroke-width="0.01" dy=".32em" x="-9" text-anchor="end">0</text></g><g class="tick" transform="translate(0,194.87320837927234)"><line x2="-6" style="shape-rendering: crispEdges; opacity: 1; stroke: rgb(0, 0, 0);"></line><text stroke-width="0.01" dy=".32em" x="-9" text-anchor="end">200</text></g><g class="tick" transform="translate(0,139.74641675854465)"><line x2="-6" style="shape-rendering: crispEdges; opacity: 1; stroke: rgb(0, 0, 0);"></line><text stroke-width="0.01" dy=".32em" x="-9" text-anchor="end">400</text></g><g class="tick" transform="translate(0,84.61962513781698)"><line x2="-6" style="shape-rendering: crispEdges; opacity: 1; stroke: rgb(0, 0, 0);"></line><text stroke-width="0.01" dy=".32em" x="-9" text-anchor="end">600</text></g><g class="tick" transform="translate(0,29.492833517089313)"><line x2="-6" style="shape-rendering: crispEdges; opacity: 1; stroke: rgb(0, 0, 0);"></line><text stroke-width="0.01" dy=".32em" x="-9" text-anchor="end">800</text></g></g><path class="domain" d="M-6,0H0V250H-6" fill="none" stroke="#000" stroke-width="1" style="shape-rendering: crispEdges;"></path><text></text></g><g class="rd3-barchart-xaxis" transform="translate(0 ,250)"><g><g class="tick" transform="translate(41.5,0)"><line y2="6" style="shape-rendering: crispEdges; opacity: 1; stroke: rgb(0, 0, 0);"></line><text stroke-width="0.01" dy=".71em" y="9" text-anchor="middle">18-25</text></g><g class="tick" transform="translate(104.5,0)"><line y2="6" style="shape-rendering: crispEdges; opacity: 1; stroke: rgb(0, 0, 0);"></line><text stroke-width="0.01" dy=".71em" y="9" text-anchor="middle">25-32</text></g><g class="tick" transform="translate(167.5,0)"><line y2="6" style="shape-rendering: crispEdges; opacity: 1; stroke: rgb(0, 0, 0);"></line><text stroke-width="0.01" dy=".71em" y="9" text-anchor="middle">33-40</text></g><g class="tick" transform="translate(230.5,0)"><line y2="6" style="shape-rendering: crispEdges; opacity: 1; stroke: rgb(0, 0, 0);"></line><text stroke-width="0.01" dy=".71em" y="9" text-anchor="middle">40-54</text></g><g class="tick" transform="translate(293.5,0)"><line y2="6" style="shape-rendering: crispEdges; opacity: 1; stroke: rgb(0, 0, 0);"></line><text stroke-width="0.01" dy=".71em" y="9" text-anchor="middle">55+</text></g></g><path class="domain" d="M0,6V0H335V6" fill="none" stroke="none" stroke-width="1" style="shape-rendering: crispEdges;"></path><text></text></g><g><rect class="rd3-barchart-bar" height="156.28445424476297" width="47" x="18" y="93.71554575523705" fill="#3182bd" offset="0"></rect><rect class="rd3-barchart-bar" height="208.9305402425579" width="47" x="81" y="41.06945975744211" fill="#3182bd" offset="0"></rect><rect class="rd3-barchart-bar" height="250" width="47" x="144" y="0" fill="#3182bd" offset="0"></rect><rect class="rd3-barchart-bar" height="152.425578831312" width="47" x="207" y="97.57442116868798" fill="#3182bd" offset="0"></rect><rect class="rd3-barchart-bar" height="207.5523704520397" width="47" x="270" y="42.447629547960304" fill="#3182bd" offset="0"></rect></g></g></svg></div></div><div class="splitbar-container"><p>Distribution of voters</p><div class="splitbar-content"><div class="democrats" style="width: 9.34771%;"><span>Democrats</span></div><div class="republicans" style="width: 46.8413%;"><span>Republicans</span></div><div class="independents" style="width: 41.9106%;"><span>Independents</span></div><div class="unidentified" style="width: 1.90036%;"><span>&nbsp;</span></div></div></div></div></div><div class="counter-container"><div class="counter-element"><div class="content"><div class="choiceName">Yes</div><div class="choiceCount">503</div></div></div><div class="counter-element"><div class="content"><div class="choiceName">No</div><div class="choiceCount">378</div></div></div></div><div class="share-container"><div class="share-content"><div class="share-message">Spread Awareness</div><div class="share-btn"><img src="./Pollarize_files/FB-f-Logo__blue_29.png"></div><div class="share-btn"><img src="./Pollarize_files/Twitter_Logo_White_On_Blue.svg"></div><div class="share-btn"><img src="./Pollarize_files/In-2C-28px-TM.png"></div></div></div><div class="take-action-container"><div class="take-action-content"><div class="take-action-message">Get Involved</div><div class="actions-container"><div class="take-action-action"><div class="take-action-icon"><img src="./Pollarize_files/document.svg"></div><div>Start A Petition</div></div><div class="take-action-action"><div class="take-action-icon"><img src="./Pollarize_files/phone.svg"></div><div>Contact Your Representative</div></div></div></div></div></div></div>
+  <script type="text/javascript" src="./Pollarize_files/vendor.bundle.js"></script><script type="text/javascript" src="./Pollarize_files/bundle.js"></script>
+
+</body></html>
