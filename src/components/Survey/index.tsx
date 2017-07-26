@@ -40,7 +40,7 @@ export class Survey extends React.Component<ISurveyProps, {}> {
           <section className="author-constituency">
             <div className="constituency-level">
               <img src="https://cdn1.iconfinder.com/data/icons/mirrored-twins-icon-set-hollow/512/PixelKit_point_marker_icon.png" />
-              <span>{ConstituencyLevel[survey.author.constituency.level]}</span>
+              <span>{survey.author.constituency.level}</span>
             </div>
             <span className="constituency-population">{survey.author.constituency.population}</span>
             <div className="constituency-location">
