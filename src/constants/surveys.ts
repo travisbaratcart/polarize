@@ -98,15 +98,15 @@ export const SURVEYS = [
   {
     "id": "Survey_2",
     "author": {
-      "imageUrl": "https://lh5.googleusercontent.com/-3d-6t-KnblQ/UyoFC9UDB_I/AAAAAAAAASs/suyew-lv9B0/w1085-h1086/KG%2Bmayor%2Bhead%2Bshot%2Bjan%2B2014.jpg",
-      "displayName": "Karen Guzak",
-      "title": "Mayor",
+      "imageUrl": "https://bloximages.chicago2.vip.townnews.com/cecildaily.com/content/tncms/assets/v3/editorial/1/e6/1e67a68c-54e1-5857-9954-92a2f6778c75/58fa30bae0cd6.image.jpg",
+      "displayName": "Allison Galbraith",
+      "title": "Congresional Hopeful",
       "politicalParty": "Democrat",
       "constituency": {
-        "coordinates": "47.9129° N, 122.0982° W",
-        "location": "Snohomish, Wa",
+        "coordinates": "38.9209° N, 75.9552° W",
+        "location": "Queen Annes County, MD",
         "level": "State",
-        "population": 98290
+        "population": 48929,
       }
     },
     "questions": [
@@ -163,15 +163,15 @@ export const SURVEYS = [
   {
     "id": "Survey_3",
     "author": {
-      "imageUrl": "https://lh5.googleusercontent.com/-3d-6t-KnblQ/UyoFC9UDB_I/AAAAAAAAASs/suyew-lv9B0/w1085-h1086/KG%2Bmayor%2Bhead%2Bshot%2Bjan%2B2014.jpg",
-      "displayName": "Karen Guzak",
-      "title": "Mayor",
-      "politicalParty": "Democrat",
+      "imageUrl": "http://uploads.webflow.com/56fa5fd1204063eb546bb60d/5806143408868fec6c6de63e_donald-trump_416x416.jpg",
+      "displayName": "Donald Trump",
+      "title": "President",
+      "politicalParty": "Republican",
       "constituency": {
-        "coordinates": "47.9129° N, 122.0982° W",
-        "location": "Snohomish, Wa",
+        "coordinates": "39.83333° N, -98.58334° E",
+        "location": "U.S.A",
         "level": "Federal",
-        "population": 98290
+        "population": 323950000,
       }
     },
     "questions": [

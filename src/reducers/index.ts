@@ -61,7 +61,7 @@ export interface RootState {
 
 export const reducer: Reducer<RootState> = (state: RootState, action: any) => {
   if (!state) {
-    const initialSurvey = SURVEYS[0];
+    var initialSurvey: ISurvey = SURVEYS[0];
 
     state = {
       surveyId: initialSurvey.id,
