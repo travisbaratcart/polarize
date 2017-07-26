@@ -9,10 +9,21 @@
 
   .content {
   	.choiceName {
-        font-size: 15px;
         margin: 3px;
         text-transform: capitalize;
         font-weight: 400;
+        $font-size: 15px;
+        $line-height: 1.4;
+        $lines-to-show: 2;
+        display: -webkit-box;
+        max-width: 400px;
+        margin: 0 auto;
+        font-size: $font-size;
+        line-height: $line-height;
+        -webkit-line-clamp: $lines-to-show;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
   	}
 	.choiceCount {
   	  font-size: 30px;

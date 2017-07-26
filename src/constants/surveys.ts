@@ -29,8 +29,8 @@ export const SURVEYS = [
         "title": "Are local parks important to your quality of life?",
         "description": "",
         "options": [
-          "yes",
-          "no"
+          "Yes",
+          "No"
         ]
       },
       {
@@ -38,8 +38,8 @@ export const SURVEYS = [
         "title": "Do you think that maintainance of parks is an important area to fund?",
         "description": "",
         "options": [
-          "yes",
-          "no"
+          "Yes",
+          "No"
         ]
       },
       {
@@ -47,8 +47,8 @@ export const SURVEYS = [
         "title": "Should we hire more police officers?",
         "description": "There are currently 18 police hired for the city of Snohomish, 2 on duty at all times. Each additional officer costs $100k+ per year",
         "options": [
-          "yes",
-          "no"
+          "Yes",
+          "No"
         ]
       },
       {
