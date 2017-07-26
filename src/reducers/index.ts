@@ -1,8 +1,9 @@
 import { combineReducers, Reducer } from 'redux';
 // import { surveyReducer } from './surveys';
 import * as actions from '../constants/actions';
+import { SURVEYDATA } from '../constants/surveys';
 
-interface ISurveyQuestion {
+export interface ISurveyQuestion {
   id: string;
   title: string;
   description: string;
@@ -37,9 +38,9 @@ export interface ISurvey {
   author: ISurveyAuthor;
 }
 
-interface IAnswer {
+export interface IAnswer {
   questionId: string;
-  optionId: string;
+  answer: string;
 }
 
 export interface IChoiceResults {
@@ -52,52 +53,36 @@ interface IChoiceData {
 }
 
 export interface RootState {
-  surveys: ISurvey[];
-  currentSurvey: string;
-  currentQuestion: string;
   answers: IAnswer[];
   submitted: boolean;
 }
 
-export const reducer: Reducer<RootState> = (state: RootState = <RootState>{}, action: any) => {
-  switch (action.type) {
-    case actions.RECEIVE_SURVEYS:
-      return Object.assign({}, state, {
-        surveys: action.surveys
-      });
-
-    case actions.CHOOSE_SURVEY:
-      const newSurveyId = action.surveyId;
-      const surveyQuestions = state.surveys.filter(survey => survey.id === action.surveyId)[0].questions;
-      const surveyAnswers = surveyQuestions.map(question => {
+export const reducer: Reducer<RootState> = (state: RootState, action: any) => {
+  if (!state) {
+    state = {
+      submitted: false,
+      answers: SURVEYDATA.questions.map(question => {
         return {
           questionId: question.id,
-          optionId: null
+          answer: null
         };
-      });
+      })
+    }
+  }
 
-      return Object.assign({}, state, {
-        currentSurvey: action.surveyId,
-        answers: surveyAnswers
-      });
-
+  switch (action.type) {
     case actions.CHOOSE_ANSWER:
       return Object.assign({}, state, {
         answers: state.answers.map(answer => {
           if (answer.questionId === action.questionId) {
             return {
               questionId: answer.questionId,
-              optionId: action.optionId
+              answer: action.answer
             };
           } else {
             return answer
           }
         })
-      });
-
-    case actions.CHOOSE_QUESTION:
-      return Object.assign({}, state, {
-        currentQuestion: action.questionId
       });
 
     case actions.SUBMIT_ANSWERS:

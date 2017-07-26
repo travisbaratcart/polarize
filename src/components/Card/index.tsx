@@ -1,41 +1,40 @@
 import * as React from 'react';
+import { ISurveyQuestion } from '../../reducers';
 
 export namespace Card {
   export interface Props {
-    cardNumber: number,
-    question: string,
-    description: string,
-    optionType: string,
-    options: string[]
-  }
-
-  export interface State {
-    selectedVal: string;
+    cardNumber: number;
+    question: ISurveyQuestion;
+    optionType: string;
+    answer: string;
+    onChangeAnswer: (questionId: string, answer: string) => void;
   }
 }
 
-export class Card extends React.Component<Card.Props, Card.State> {
+export class Card extends React.Component<Card.Props, {}> {
 
   constructor(props?: Card.Props, context?: any) {
     super(props, context);
-    this.state = {selectedVal: ''};
-    this.handleOptionChange = this.handleOptionChange.bind(this);
   }
 
-  handleOptionChange(event) {
-   this.setState({selectedVal: event.target.value});
+  changeAnswer = (e: any) => {
+    this.props.onChangeAnswer(
+      this.props.question.id,
+      e.currentTarget.value);
   }
 
   render() {
-    const { cardNumber, question, description, optionType, options } = this.props;
-    var optionItems = options.map(function(option) {
+    const { cardNumber, question, optionType } = this.props;
+    var optionItems = question.options.map((option, optionNumber) => {
       return (
-        <div className="options-list">
+        <div className="options-list" key={optionNumber}>
           <input
             type={optionType}
-            name={question}
+            name={question.title}
             id={option}
-            value={option} />
+            value={option}
+            checked={this.props.answer === option}
+            onChange={this.changeAnswer} />
           <label htmlFor={option}>{option}</label>
         </div>
       );
@@ -44,10 +43,10 @@ export class Card extends React.Component<Card.Props, Card.State> {
       <div className="card-container">
         <span className="card-no">{cardNumber}</span>
         <div className="heading">
-          <h1>{question}</h1>
+          <h1>{question.title}</h1>
         </div>
         <div className="content">
-          <p>{description}</p>
+          <p>{question.description}</p>
           {optionItems}
           <a className="activity-link" href="">Activity/Details View</a>
         </div>
