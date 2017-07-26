@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import { ISurveyQuestion } from '../../reducers';
 
 export namespace Card {
@@ -8,6 +9,7 @@ export namespace Card {
     optionType: string;
     answer: string;
     onChangeAnswer: (questionId: string, answer: string) => void;
+    history?: any;
   }
 }
 
@@ -21,6 +23,13 @@ export class Card extends React.Component<Card.Props, {}> {
     this.props.onChangeAnswer(
       this.props.question.id,
       e.currentTarget.value);
+  }
+
+  getNavigateToQuestionDetailsFunc = (qid: string) => {
+    return (e: any) => {
+      event.preventDefault();
+      this.context.router.history.push();
+    }
   }
 
   render() {
@@ -48,7 +57,7 @@ export class Card extends React.Component<Card.Props, {}> {
         <div className="content">
           <p>{question.description}</p>
           {optionItems}
-          <a className="activity-link" href={'/question/' + question.id}>Activity/Details View</a>
+          <Link to={'/question/' + question.id} className="activity-link">Activity/Details View</Link>
         </div>
       </div>
     );
