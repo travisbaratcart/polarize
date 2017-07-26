@@ -26,7 +26,8 @@ export class SplitBar extends React.Component<SplitBar.Props, SplitBar.State> {
 
 
     return (
-      <div className="splitbar-container">
+	<div className="splitbar-container">
+	  <div className="splitbar-content">
         <div style={{width: (d/total)*100 + '%'}} className="democrats">
           <span>Democrats</span>
         </div>
@@ -40,6 +41,7 @@ export class SplitBar extends React.Component<SplitBar.Props, SplitBar.State> {
           <span>&nbsp;</span>
         </div>
       </div>
+	</div>
     );
   }
 }

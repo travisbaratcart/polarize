@@ -3,9 +3,10 @@ import * as Actions from '../../constants/actions';
 import * as $ from 'jquery';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { RouteComponentProps } from 'react-router';
+import { RouteComponentProps } from 'react-router-dom';
+// import { SURVEYDATA } from '../../constants/surveys';
 import { RootState, IAnswer, ISurvey, ConstituencyLevel, IChoiceResults } from '../../reducers';
-import { Graph, Survey, SplitBar, Counter, CounterContainer } from '../../components';
+import { Graph, Survey, SplitBar, Counter, CounterContainer, QuestionDetail } from '../../components';
 import { SURVEYS, getSurveyFromId, getSurveyQuestionsFromId } from '../../constants/surveys';
 
 export namespace App {

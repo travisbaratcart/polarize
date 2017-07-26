@@ -1,0 +1,23 @@
+.share-container {
+
+  .share-content
+  {
+    text-align: center;
+    padding: 20px;
+	
+	img {
+	  width: 29px;
+	  height: 29px;
+	}
+	  
+	.share-btn {
+	  text-align: center;
+	  display: inline-block;
+	  margin: 10px;
+	}
+	
+	.share-message {
+	  font-weight: bold;
+	}
+  }
+}

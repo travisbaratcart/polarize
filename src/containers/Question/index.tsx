@@ -1,13 +1,16 @@
 import * as React from 'react';
+import { Router, Route, Switch, RouteComponentProps } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { RouteComponentProps } from 'react-router';
-import { RootState, ISurvey, ConstituencyLevel } from '../../reducers';
-import { Survey, QuestionDetail } from '../../components';
+import { RootState, ISurvey, ConstituencyLevel, IChoiceResults, ISurveyQuestion } from '../../reducers';
+import { Survey, QuestionDetail, CounterContainer, Share, TakeAction } from '../../components';
+import { getRandomNumberOfUsers } from '../../utils/random';
+import { SURVEYS, getSurveyFromId } from '../../constants/surveys';
 
 export namespace Question {
   export interface Props extends RouteComponentProps<void> {
-    // empty
+	  match? : any;
+    surveyId: string;
   }
 
   export interface State {
@@ -15,25 +18,61 @@ export namespace Question {
   }
 }
 
+var group1 = getRandomNumberOfUsers(1000);
+var group2 = getRandomNumberOfUsers(1000);
+var group3 = getRandomNumberOfUsers(1000);
+var group4 = getRandomNumberOfUsers(1000);
+var group5 = getRandomNumberOfUsers(1000);
+const graphData = [group1, group2, group3, group4, group5];
+
+var dems = getRandomNumberOfUsers(1000);
+var republicans = getRandomNumberOfUsers(1000);
+var independents = getRandomNumberOfUsers(1000);
+var other = getRandomNumberOfUsers(1000);
+
 @connect(mapStateToProps, mapDispatchToProps)
 export class Question extends React.Component<Question.Props, Question.State> {
 
   render() {
+	  const questionId = this.props.match.params.qid;
+	  const currentSurvey: ISurvey = getSurveyFromId(this.props.surveyId);
+
+	  var surveyQuestion : ISurveyQuestion = null;
+
+		for (var i = 0; i < currentSurvey.questions.length; i++) {
+			if (currentSurvey.questions[i].id === questionId) {
+				surveyQuestion = currentSurvey.questions[i];
+			}
+		}
+
+	var choiceResults: IChoiceResults =
+	{
+		results : []
+	};
+
+	surveyQuestion.options.map((questionOption) => {
+		var optionCount = getRandomNumberOfUsers(1000);
+		choiceResults.results.push({ choiceName: questionOption, choiceCount: optionCount });
+	});
     return (
       <div>
         <div className="app-heading">
           <h1>Pollarize</h1>
         </div>
         <div className="app-content">
+		  <div className="survey-question">{surveyQuestion.title}</div>
           <QuestionDetail
-            graphData={[1,2,3,4,5]}
+            graphData={graphData}
             splitBarData={{
-              'democrats': 50,
-              'republicans': 23,
-              'independents': 30,
-              'unidentified': 10
+              'democrats': dems,
+              'republicans': republicans,
+              'independents': independents,
+              'unidentified': other
             }} />
         </div>
+		<CounterContainer data={choiceResults} />
+		<Share />
+		<TakeAction />
       </div>
     );
   }
@@ -41,6 +80,7 @@ export class Question extends React.Component<Question.Props, Question.State> {
 
 function mapStateToProps(state: RootState) {
   return {
+    surveyId: state.surveyId
   };
 }
 
