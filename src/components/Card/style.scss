@@ -12,7 +12,7 @@
     position: absolute;
     top: -15px;
     left: -15px;
-    background-color: $blue1;
+    background-color: $red;
     border-radius: 20px;
     text-align: center;
     padding: 5px;
@@ -40,14 +40,20 @@
       font-size: 14px;
       margin: 0;
     }
-    a {
-      color: $blue2;
-      text-decoration: none;
-      text-align: center;
-      font-size: 12px;
-      margin: 0 auto;
-      display: block;
-    }
+  }
+
+  .activity-link {
+    background: url('../images/activity.png') no-repeat transparent;
+    background-size: 18px 16px;
+    padding-left: 9px;
+    color: $blue1;
+    text-decoration: none;
+    text-align: center;
+    font-size: 12px;
+    width: 135px;
+    margin: 0 auto;
+    display: block;
+    line-height: 18px;
   }
 
   .options-list {
