@@ -29,7 +29,7 @@ export class App extends React.Component<App.Props, App.State> {
     return (
       <div>
         <div className="app-heading">
-          <h1>Pollarize</h1>
+          <h1><a href="/">Pollarize</a></h1>
           <ul>
             <li className="selected">
               <a href="">City</a>
@@ -52,13 +52,6 @@ export class App extends React.Component<App.Props, App.State> {
             onSubmit={this.props.onSubmit}
             answers={this.props.answers}
             onChangeAnswer={this.props.onChangeAnswer} />
-          <Graph data={[1,2,3,4,5]}/>
-          <SplitBar data={{
-            'democrats': 50,
-            'republicans': 23,
-            'independents': 30,
-            'unidentified': 10
-          }}/>
         </div>
       </div>
     );
@@ -75,6 +68,7 @@ function mapStateToProps(state: RootState) {
 function mapDispatchToProps(dispatch) {
   return {
     onSubmit: () => {
+      window.scrollTo(0, 280);
       dispatch({
         type: Actions.SUBMIT_ANSWERS
       });
