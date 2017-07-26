@@ -56,9 +56,10 @@ export interface RootState {
   currentSurvey: string;
   currentQuestion: string;
   answers: IAnswer[];
+  submitted: boolean;
 }
 
-export const reducer: Reducer<RootState> = (state: RootState, action: any) => {
+export const reducer: Reducer<RootState> = (state: RootState = <RootState>{}, action: any) => {
   switch (action.type) {
     case actions.RECEIVE_SURVEYS:
       return Object.assign({}, state, {
@@ -97,6 +98,12 @@ export const reducer: Reducer<RootState> = (state: RootState, action: any) => {
     case actions.CHOOSE_QUESTION:
       return Object.assign({}, state, {
         currentQuestion: action.questionId
+      });
+
+    case actions.SUBMIT_ANSWERS:
+      console.log('submitting answers');
+      return Object.assign({}, state, {
+        submitted: true
       });
 
     default:

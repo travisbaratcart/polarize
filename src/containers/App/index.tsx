@@ -1,15 +1,15 @@
 import * as React from 'react';
+import * as Actions from '../../constants/actions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router';
-import { RootState, ISurvey, ConstituencyLevel } from '../../reducers';
-import { Survey, QuestionDetail } from '../../components';
 import { RootState, ISurvey, ConstituencyLevel, IChoiceResults } from '../../reducers';
 import { Graph, Survey, SplitBar, Counter, CounterContainer } from '../../components';
 
 export namespace App {
   export interface Props extends RouteComponentProps<void> {
-    // empty
+    onSubmit: () => any;
+    submitted: boolean;
   }
 
   export interface State {
@@ -45,21 +45,6 @@ const exampleSurvey: ISurvey = {
    }]
 }
 
-const exampleChoiceResults: IChoiceResults = {
-	results: [{
-	  choiceName: 'choice A',
-	  choiceCount: 42
-	},
-	{
-	  choiceName: 'choice B',
-	  choiceCount: 1042
-	},
-	{
-	  choiceName: 'choice C',
-	  choiceCount: 2048
-	}]
-}
-
 @connect(mapStateToProps, mapDispatchToProps)
 export class App extends React.Component<App.Props, App.State> {
 
@@ -84,8 +69,14 @@ export class App extends React.Component<App.Props, App.State> {
           </ul>
         </div>
         <div className="app-content">
-          <Survey survey={exampleSurvey} />
-		      <CounterContainer data={exampleChoiceResults} />
+          <Survey survey={exampleSurvey} submitted={this.props.submitted} onSubmit={this.props.onSubmit}/>
+          <Graph data={[1,2,3,4,5]}/>
+          <SplitBar data={{
+            'democrats': 50,
+            'republicans': 23,
+            'independents': 30,
+            'unidentified': 10
+          }}/>
         </div>
       </div>
     );
@@ -94,10 +85,16 @@ export class App extends React.Component<App.Props, App.State> {
 
 function mapStateToProps(state: RootState) {
   return {
+    submitted: state.submitted
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
+    onSubmit: () => {
+      dispatch({
+        type: Actions.SUBMIT_ANSWERS
+      });
+    }
   };
 }
