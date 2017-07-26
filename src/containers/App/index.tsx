@@ -29,7 +29,7 @@ export class App extends React.Component<App.Props, App.State> {
     return (
       <div>
         <div className="app-heading">
-          <h1>Pollarize</h1>
+          <h1><a href="/">Pollarize</a></h1>
           <ul>
             <li className="selected">
               <a href="">City</a>
@@ -68,7 +68,7 @@ function mapStateToProps(state: RootState) {
 function mapDispatchToProps(dispatch) {
   return {
     onSubmit: () => {
-      window.scrollTo(0, 200);
+      window.scrollTo(0, 280);
       dispatch({
         type: Actions.SUBMIT_ANSWERS
       });

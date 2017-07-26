@@ -72,9 +72,11 @@ export class Survey extends React.Component<ISurveyProps, {}> {
             : (
                 <section className="survey-questions">
                   {surveyQuestions}
-                  <button onClick={this.props.onSubmit}>
+                  <div className="submit-button">
+                    <button onClick={this.props.onSubmit}>
                     Submit
-                  </button>
+                    </button>
+                  </div>
                 </section>
               )
         }
