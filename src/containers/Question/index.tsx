@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Router, Route, Switch, RouteComponentProps } from 'react-router-dom';
+import { Router, Route, Switch, RouteComponentProps, Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { RootState, ISurvey, ConstituencyLevel, IChoiceResults, ISurveyQuestion } from '../../reducers';
@@ -60,6 +60,9 @@ export class Question extends React.Component<Question.Props, Question.State> {
           <h1>Pollarize</h1>
         </div>
         <div className="app-content">
+		  <div className="back-btn">
+		    <Link to={'/'}><img src="../../assets/back.png" /><span>Survey</span></Link>
+		  </div>
 		  <div className="survey-question">{surveyQuestion.title}</div>
           <QuestionDetail
             graphData={graphData}
