@@ -3,7 +3,7 @@ import * as Actions from '../../constants/actions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router';
-import { RootState, ISurvey, ConstituencyLevel, IChoiceResults } from '../../reducers';
+import { RootState, IAnswer, ISurvey, ConstituencyLevel, IChoiceResults } from '../../reducers';
 import { Graph, Survey, SplitBar, Counter, CounterContainer } from '../../components';
 import { SURVEYDATA } from '../../constants/surveys';
 
@@ -11,6 +11,8 @@ export namespace App {
   export interface Props extends RouteComponentProps<void> {
     onSubmit: () => any;
     submitted: boolean;
+    answers: IAnswer[];
+    onChangeAnswer: (questionId: string, answer: string) => void;
   }
 
   export interface State {
@@ -44,7 +46,12 @@ export class App extends React.Component<App.Props, App.State> {
           </ul>
         </div>
         <div className="app-content">
-          <Survey survey={exampleSurvey} submitted={this.props.submitted} onSubmit={this.props.onSubmit}/>
+          <Survey
+            survey={exampleSurvey}
+            submitted={this.props.submitted}
+            onSubmit={this.props.onSubmit}
+            answers={this.props.answers}
+            onChangeAnswer={this.props.onChangeAnswer} />
           <Graph data={[1,2,3,4,5]}/>
           <SplitBar data={{
             'democrats': 50,
@@ -60,7 +67,8 @@ export class App extends React.Component<App.Props, App.State> {
 
 function mapStateToProps(state: RootState) {
   return {
-    submitted: state.submitted
+    submitted: state.submitted,
+    answers: state.answers
   };
 }
 
@@ -69,6 +77,13 @@ function mapDispatchToProps(dispatch) {
     onSubmit: () => {
       dispatch({
         type: Actions.SUBMIT_ANSWERS
+      });
+    },
+    onChangeAnswer: (questionId: string, answer: string) => {
+      dispatch({
+        type: Actions.CHOOSE_ANSWER,
+        questionId,
+        answer
       });
     }
   };

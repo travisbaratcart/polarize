@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ISurvey, ConstituencyLevel } from '../../reducers/index';
+import { ISurvey, IAnswer, ConstituencyLevel, RootState } from '../../reducers/index';
 import { Card } from '../Card';
 import { SurveyAnswer } from '../SurveyAnswer';
 
@@ -7,6 +7,8 @@ interface ISurveyProps {
   survey: ISurvey;
   submitted: boolean;
   onSubmit: () => any;
+  answers: IAnswer[]
+  onChangeAnswer: (questionId: string, answer: string) => void;
 };
 
 export class Survey extends React.Component<ISurveyProps, {}> {
@@ -14,14 +16,18 @@ export class Survey extends React.Component<ISurveyProps, {}> {
     const survey = this.props.survey;
 
     const surveyQuestions = survey.questions.map((question, cardNumber) => {
+      const answerToQuestion = this.props.answers.filter(answer => {
+          return answer.questionId === question.id;
+        })[0].answer;
+
       return (
         <Card
           key={cardNumber}
           cardNumber={cardNumber + 1}
-          question={question.title}
-          description={question.description}
+          question={question}
           optionType="radio"
-          options={question.options}/>
+          answer={answerToQuestion}
+          onChangeAnswer={this.props.onChangeAnswer} />
       );
     });
 
