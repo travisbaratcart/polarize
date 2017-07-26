@@ -25,7 +25,7 @@ export enum ConstituencyLevel {
 }
 
 interface IConstituency {
-  level: ConstituencyLevel,
+  level: string,
   location: string;
   coordinates: string;
   population: number;
