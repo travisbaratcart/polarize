@@ -31,7 +31,7 @@ export class SurveyAnswer extends React.Component<ISurveyAnswerProps, {}> {
     };
 
     return (
-      <section>
+      <section className="surveyanswer-container">
         <h1>{this.props.questionTitle}</h1>
         <h2>{this.props.questionDescription}</h2>
         <CounterContainer data={choiceResults} />
