@@ -29,13 +29,13 @@ export class Card extends React.Component<Card.Props, {}> {
       return (
         <div className="options-list" key={optionNumber}>
           <input
-            type={optionType}
-            name={question.title}
-            id={option}
+            type="radio"
+            name={option + question.title}
+            id={option + question.title}
             value={option}
             checked={this.props.answer === option}
             onChange={this.changeAnswer} />
-          <label htmlFor={option}>{option}</label>
+          <label htmlFor={option + question.title}>{option}</label>
         </div>
       );
     });

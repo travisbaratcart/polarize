@@ -1,13 +1,14 @@
 import { combineReducers, Reducer } from 'redux';
 // import { surveyReducer } from './surveys';
 import * as actions from '../constants/actions';
-import { SURVEYDATA } from '../constants/surveys';
+import { SURVEYS } from '../constants/surveys';
 
 export interface ISurveyQuestion {
   id: string;
   title: string;
   description: string;
   options: string[];
+  optionType?: string;
 }
 
 interface ISurveyAuthor {
@@ -55,13 +56,17 @@ interface IChoiceData {
 export interface RootState {
   answers: IAnswer[];
   submitted: boolean;
+  surveyId: string;
 }
 
 export const reducer: Reducer<RootState> = (state: RootState, action: any) => {
   if (!state) {
+    var initialSurvey: ISurvey = SURVEYS[0];
+
     state = {
+      surveyId: initialSurvey.id,
       submitted: false,
-      answers: SURVEYDATA.questions.map(question => {
+      answers: initialSurvey.questions.map(question => {
         return {
           questionId: question.id,
           answer: null
@@ -88,6 +93,11 @@ export const reducer: Reducer<RootState> = (state: RootState, action: any) => {
     case actions.SUBMIT_ANSWERS:
       return Object.assign({}, state, {
         submitted: true
+      });
+
+    case actions.GET_SURVEY:
+      return Object.assign({}, state, {
+        surveyId: action.surveyId
       });
 
     default:

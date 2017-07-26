@@ -25,7 +25,7 @@ export class Survey extends React.Component<ISurveyProps, {}> {
           key={cardNumber}
           cardNumber={cardNumber + 1}
           question={question}
-          optionType="radio"
+          optionType={question.optionType || 'radio'}
           answer={answerToQuestion}
           onChangeAnswer={this.props.onChangeAnswer} />
       );
